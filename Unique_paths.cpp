@@ -26,3 +26,35 @@ public:
 
 
 // Tabulation
+
+class Solution {
+  
+public:
+    int uniquePaths(int m, int n) {
+        vector<vector<int>> dp(m,vector<int>(n,-1));
+        
+       for(int j=n-1;j>=0;j--){
+           for(int i=m-1;i>=0;i--){
+                if(i==m-1 && j==n-1){
+                    dp[i][j]=1;
+                    continue;
+                                    }
+        
+                int right=0;
+               if(j<n-1) right+= dp[i][j+1];
+        int down=0;
+              if(i<m-1)down+= dp[i+1][j];
+              dp[i][j]=right+down; 
+           }
+       }
+        return dp[0][0];
+    }
+};
+
+// Time Complexity: O(M*N)
+
+// Reason: There are two nested loops
+
+// Space Complexity: O(M*N)
+
+// Reason: We are using an external array of size ‘M*N’’.
