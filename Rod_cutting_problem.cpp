@@ -14,3 +14,12 @@ int cutRod(vector<int> &price, int n)
     return f(0,0,n,price,dp);
 	
 }
+
+
+// Time Complexity: O(N*N)
+
+// Reason: There are N*(N+1) states therefore at max ‘N*(N+1)’ new problems will be solved.
+
+// Space Complexity: O(N*N) + O(N)
+
+// Reason: We are using a recursion stack space(O(N)) and a 2D array ( O(N*(N+1)).
