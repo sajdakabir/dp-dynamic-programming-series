@@ -7,8 +7,6 @@ int f(int i,int l,int n,vector<int> &price,vector<vector<int>>&dp){
     int notCut=f(i+1,l,n,price,dp);
     return dp[i][l]=max(cut,notCut);
 }
-
-
 int cutRod(vector<int> &price, int n)
 {
  vector<vector<int>>dp(n,vector<int>(n,-1));
